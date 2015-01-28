@@ -9,8 +9,8 @@
   "issues_url": "https://github.com/pizzaops/pizzaops-lei_wrapper",
   "dependencies": [
     {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "name": "puppetlabs-puppet_enterprise",
+      "version_requirement": ">= 3.7.1-90-g4a9e885"
     }
   ]
 }
