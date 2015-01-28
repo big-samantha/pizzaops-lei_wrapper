@@ -11,6 +11,8 @@ It disables the console node classifier, and assumes you will be using `hiera_in
 
 ## Usage
 
+Install the module via the method of your choice (puppet module install, r10k, git clone, etc), and then `puppet apply tests/bootstrap.pp` on the CA master to disable the NC. Once that's done, proceed with the classification instructions below.
+
 **Check the `examples/` directory for example classification.**
 
 Through the classification method of your choice (typically `hiera_include()` for LEI users), classify your nodes with the following:
