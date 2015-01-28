@@ -11,6 +11,8 @@ It disables the console node classifier, and assumes you will be using `hiera_in
 
 ## Usage
 
+**Check the `examples/` directory for example classification.**
+
 Through the classification method of your choice (typically `hiera_include()` for LEI users), classify your nodes with the following:
 
  - CA Master: `lei_wrapper::role::ca_master`
@@ -21,5 +23,21 @@ Through the classification method of your choice (typically `hiera_include()` fo
  - ActiveMQ Spoke: `lei_wrapper::role::amq_spoke`
  - Agent Nodes: `lei_wrapper::role::agent`
 
-Additional Usage:
+Various data will need to be supplied to the `puppet_enterprise` class. You can do this by either declaring `puppet_enterprise` somewhere with parameters, or by supplying the data via hiera.
+
+### Minimum `puppet_enterprise` Params
+
+At a minimum, you will want to supply the following parameters to the `puppet_enterprise`:
+
+ * `mcollective_middlware_hosts` - list of ActiveMQ spokes to be used for mcollective. The mcollective "server" that runs on all agents will try each one in order. You can supply different data to different nodes (e.g. if you have geo-distributed spokes).
+ * `database_host` - DNS-addressable name of your PostgreSQL server, which if you are using the built in pe-postgresql, will be the PuppetDB node.
+ * `puppetdb_host` - DNS-addressable name of your PuppetDB server.
+ * `certificate_authority_host` - DNS-addressable name of your CA Master.
+ * `console_host` - DNS-addressable name of your Console server.
+
+
+### Optional but Very Important™ `puppet_enterprise` Params
+ * `database_ssl` - This defaults to true - if you are using an external postgresql server not deployed for you by the PE installer, you MUST set this to false until you have [configured PE to use SSL](https://docs.puppetlabs.com/pe/3.7/install_ssl_postgresql.html) with this database.
+
+## Additional Usage:
  - By default the console's ENC will be disabled for all masters, but you can re-enable it on a per-master basis by supplying the `disable_console_enc` value via hiera, in scope for one or all masters. If set to `false`, the console ENC will be enabled.
