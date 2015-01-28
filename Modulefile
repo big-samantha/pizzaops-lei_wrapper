@@ -1,0 +1,10 @@
+name          'pizzaops-lei_wrapper'
+version       '0.1.0'
+source        'git@github.com:pizzaops/pizzaops-lei_wrapper.git'
+author        'Zachary Alex Stern'
+license       'Apache 2.0'
+summary       'Roles and profiles for LEI-style deploy with PE 3.7.x puppetlabs-puppet_enterprise module.'
+description   ''
+project_page  'https://github.com/pizzaops/pizzaops-lei_wrapper'
+
+dependency 'puppetlabs/stdlib'
