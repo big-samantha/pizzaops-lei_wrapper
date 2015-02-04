@@ -11,7 +11,9 @@ It disables the console node classifier, and assumes you will be using `hiera_in
 
 ## Usage
 
-Install the module via the method of your choice (puppet module install, r10k, git clone, etc), and then `puppet apply tests/bootstrap.pp` on the CA master to disable the NC. Once that's done, proceed with the classification instructions below.
+Install the module via the method of your choice (puppet module install, r10k, git clone, etc),
+
+`puppet apply tests/bootstrap.pp` on the CA master will disable the NC so that you can use this module. This must be done BEFORE using the classes in this module, otherwise  you'll end up with duplicate resource declarations between the module and what's built into the console's classifier.
 
 **Check the `examples/` directory for example classification.**
 

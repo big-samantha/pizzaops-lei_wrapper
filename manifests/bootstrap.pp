@@ -9,5 +9,6 @@ class lei_wrapper::bootstrap {
     section => 'master',
     setting => 'node_terminus',
     value   => 'plain',
+    notify  => Service['pe-puppetserver'],
   }
 }
