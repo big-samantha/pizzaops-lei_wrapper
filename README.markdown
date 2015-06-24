@@ -45,3 +45,4 @@ At a minimum, you will want to supply the following parameters to the `puppet_en
 
 ## Additional Usage:
  - By default the console's ENC will be disabled for all masters, but you can re-enable it on a per-master basis by supplying the `disable_console_enc` value via hiera, in scope for one or all masters. If set to `false`, the console ENC will be enabled.
+ - If the `disable_console_enc` param is set to `true` (default), you may optionally specify a custom value for the `node_terminus` setting in puppet.conf by setting the `node_terminus` value in hiera.  Otherwise the `node_terminus` value will be set to `plain`.
