@@ -1,4 +1,4 @@
-class lei_wrapper::role::common {
+class lei_wrapper::profile::common {
   include lei_wrapper::params
   include puppet_enterprise
   include puppet_enterprise::profile::agent
