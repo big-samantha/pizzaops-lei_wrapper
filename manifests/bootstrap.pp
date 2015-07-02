@@ -1,8 +1,4 @@
 class lei_wrapper::bootstrap {
-  service { 'pe-puppetserver':
-    ensure => running,
-  }
-
   pe_ini_setting { 'disable-console-nc':
     ensure  => present,
     path    => '/etc/puppetlabs/puppet/puppet.conf',
@@ -10,5 +6,9 @@ class lei_wrapper::bootstrap {
     setting => 'node_terminus',
     value   => 'plain',
     notify  => Service['pe-puppetserver'],
+  }
+
+  service { 'pe-puppetserver':
+    ensure => running,
   }
 }
