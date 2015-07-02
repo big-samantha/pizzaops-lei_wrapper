@@ -1,5 +1,6 @@
 class lei_wrapper::profile::master {
   $disable_console_enc = hiera('disable_console_enc', true)
+  $node_terminus = hiera('node_terminus', 'plain')
 
   if $disable_console_enc == true {
     class { 'puppet_enterprise::profile::master':
@@ -10,7 +11,7 @@ class lei_wrapper::profile::master {
       path    => '/etc/puppetlabs/puppet/puppet.conf',
       section => 'master',
       setting => 'node_terminus',
-      value   => 'plain',
+      value   => $node_terminus,
       notify  => Service['pe-puppetserver']
     }
   }
