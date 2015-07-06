@@ -1,8 +1,9 @@
 source "https://rubygems.org"
+ruby '1.9.3'
 
 group :test do
   gem "rake"
-  gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
+  gem "puppet", '~> 3.8.0'
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
