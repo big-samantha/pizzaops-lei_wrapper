@@ -1,6 +1,6 @@
 {
   "name": "pizzaops-lei_wrapper",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "author": "Zee Alexander",
   "summary": "Roles and profiles for LEI-style deploy with PE 3.8.x puppetlabs-puppet_enterprise module.",
   "license": "Apache-2.0",
